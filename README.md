@@ -15,3 +15,8 @@ Songs slot program.
 This scans the directory for files and generates a slot with the following design `songname:filepath`.
 
 The song name has the directory and file extension stripped.  Underscores are also replaced with spaces to allow for voice recognition of the song name.
+
+## sentences.ini
+Sentences file for intents.
+
+These are the different intents created.  I have roughly grouped them with spacing so you can tell similar commands.
