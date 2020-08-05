@@ -1,0 +1,44 @@
+{
+    "dialogue": {
+        "system": "rhasspy"
+    },
+    "handle": {
+        "command": {
+            "program": "/profiles/en/custom_handler.py"
+        },
+        "system": "command"
+    },
+    "intent": {
+        "system": "fsticuffs"
+    },
+    "microphone": {
+        "arecord": {
+            "device": "sysdefault:CARD=USB"
+        },
+        "system": "arecord"
+    },
+    "mqtt": {
+        "enabled": "",
+        "host": "x.x.x.x"
+    },
+    "sounds": {
+        "aplay": {
+            "device": "sysdefault:CARD=USB"
+        },
+        "recorded": "${RHASSPY_PROFILE_DIR}/wav/recorded.wav",
+        "system": "aplay",
+        "wake": "${RHASSPY_PROFILE_DIR}/wav/wake.wav"
+    },
+    "speech_to_text": {
+        "system": "kaldi"
+    },
+    "text_to_speech": {
+        "system": "nanotts"
+    },
+    "wake": {
+        "porcupine": {
+            "keyword_path": "jarvis.ppn"
+        },
+        "system": "porcupine"
+    }
+}
