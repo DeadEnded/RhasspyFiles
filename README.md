@@ -8,6 +8,10 @@ Sentences file for intents.
 These are the different intents created.  I have roughly grouped them with spacing so you can tell similar commands.
 
   
+## profile.json
+Profile for configuration.
+
+
 ## /slots/zones
 Slot with house zones for automations.
 
