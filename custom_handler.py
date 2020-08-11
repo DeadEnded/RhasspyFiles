@@ -22,5 +22,8 @@ if intent == "AdjustVolume":
 elif intent == "PlaySong":
     subprocess.call("play -q {} > /dev/null 2>&1".format(song),shell=True, env={"AUDIODEV":"hw:1,0"})
 
+elif intent == "StopMusic":
+    subprocess.call("ps -ef | pgrep play | xargs kill > /dev/null 2>&1",shell=True)
+
 # convert dict to json and print to stdout
 print(json.dumps(o))
