@@ -1,7 +1,10 @@
 #! /usr/bin/env bash
 
-for file in /media/black/music/*;
-do
-  filename=$(basename $file .mp3)
-  echo "("${filename//_/ }")":$file;
+for dir in /media/black/music/*;
+  do
+  for file in ${dir}/*;
+  do
+    filename=$(basename $file .mp3)
+    echo "("${filename//_/ }")":$file;
+  done
 done
