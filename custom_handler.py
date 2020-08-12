@@ -25,7 +25,7 @@ elif intent == "PlaySong":
     subprocess.call("play -q {} > /dev/null 2>&1".format(song),shell=True, env={"AUDIODEV":"hw:1,0"})
 
 elif intent == "PlayKidSongs":
-    subprocess.call("play -q /media/black/music/kidsongs.m3u > /dev/null 2>&1",shell=True, env={"AUDIODEV":"hw:1,0"})
+    subprocess.call("play -q /media/black/music/kids/* > /dev/null 2>&1",shell=True, env={"AUDIODEV":"hw:1,0"})
 
 elif intent == "StopMusic":
     subprocess.call("ps -ef | pgrep play | xargs kill > /dev/null 2>&1",shell=True)
