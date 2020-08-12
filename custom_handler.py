@@ -12,8 +12,10 @@ def speech(text):
 o = json.loads(sys.stdin.read())
 
 intent = o["intent"]["name"]
-volume = o.get("slots").get("volume")
-song = o.get("slots").get("song")
+
+if(o.get("slots") is not None):
+  volume = o.get("slots").get("volume")
+  song = o.get("slots").get("song")
 
 if intent == "AdjustVolume":
     subprocess.call("amixer -c 1 set 'PCM',0 {}% > /dev/null 2>&1".format(volume),shell=True)
@@ -21,6 +23,9 @@ if intent == "AdjustVolume":
 
 elif intent == "PlaySong":
     subprocess.call("play -q {} > /dev/null 2>&1".format(song),shell=True, env={"AUDIODEV":"hw:1,0"})
+
+elif intent == "PlayKidSongs":
+    subprocess.call("play -q /media/black/music/kidsongs.m3u > /dev/null 2>&1",shell=True, env={"AUDIODEV":"hw:1,0"})
 
 elif intent == "StopMusic":
     subprocess.call("ps -ef | pgrep play | xargs kill > /dev/null 2>&1",shell=True)
