@@ -33,4 +33,5 @@ Custom intent handler for Rhasspy.
 Currently setup with three intents:
   1) The first adjusted the speaker volume (change card to match your systems speaker device).
   2) The second is used to play local mp3 files through the speaker (requires installation of `libsox-fmt-mp3`).  This requires setting the `AUDIODEV` to your speaker device.
-  3) The third is a command to kill music played with the second intent - this is called from Node-Red because the speakerphone cannot listen while playing music.
+  3) The third is to play an m3u playlist that points to the directory of kids songs.
+  4) the fourth is a command kill music played with the second intent - this is called from Node-Red because the speakerphone cannot listen while playing music.
